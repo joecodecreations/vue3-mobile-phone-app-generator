@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    container_name: my-project
+    ports:
+      - '8080:8080'
+    environment:
+      - VUE_APP_API_URL=http://localhost:3000
+    volumes:
+      - .:/app
+      - /app/node_modules
